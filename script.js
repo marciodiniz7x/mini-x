@@ -53,6 +53,8 @@ function apagaPost(id) {
         return postAtual.id !== id
     });
 
-    console.log(listaDePostsAtualizada)
+    miniX.posts = listaDePostsAtualizada
 }
-apagaPost(1)
+apagaPost(1);
+
+console.log(pegaPosts());
