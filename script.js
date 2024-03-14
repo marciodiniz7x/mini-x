@@ -26,6 +26,7 @@ function criaPost(dados) {
     })
 }
 criaPost({owner: 'marciodiniz7x', content: 'Segundo post'});
+criaPost({owner: 'marciodiniz7x', content: 'Terceiro post'});
 
 // console.log(miniX.posts);
 
@@ -54,4 +55,4 @@ function apagaPost(id) {
 
     console.log(listaDePostsAtualizada)
 }
-apagaPost(2)
+apagaPost(1)
