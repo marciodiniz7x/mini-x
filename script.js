@@ -19,6 +19,7 @@ const miniX = {
 // CREATE
 function criaPost(dados) {
     miniX.posts.push({
+        id: miniX.posts.length + 1,
         owner: dados.owner,
         content: dados.content
     })
