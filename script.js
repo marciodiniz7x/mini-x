@@ -1,3 +1,5 @@
+console.log('texto');
+
 // [CRUD] JavaScript BÁSICO
 const miniX = {
 
