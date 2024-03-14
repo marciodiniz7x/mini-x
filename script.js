@@ -1,5 +1,6 @@
-// [CRUD] JavaScript BÁSICO
+console.log('texto');
 
+// [CRUD] JavaScript BÁSICO
 const miniX = {
 
     usuarios: [
@@ -35,9 +36,22 @@ function pegaPosts() {
 console.log(pegaPosts())
 
 // UPDATE
-function atualizaContentDoPost() {
-
+function atualizaContentDoPost(id, novoConteudo) {
+    const postQueVaiAtualizar = pegaPosts().find((post) => {
+        return post.id === id
+    });
+    console.log(postQueVaiAtualizar);
+    postQueVaiAtualizar.content = novoConteudo
 }
-atualizaContentDoPost('Novo conteúdo do post');
+atualizaContentDoPost(1, 'Novo conteúdo do post');
+console.log(pegaPosts())
 
 // DELETE
+function apagaPost(id) {
+    const listaDePostsAtualizada = pegaPosts().filter((postAtual) => {
+        return postAtual.id !== id
+    });
+
+    console.log(listaDePostsAtualizada)
+}
+apagaPost(2)
