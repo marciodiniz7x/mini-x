@@ -1,4 +1,5 @@
 // [CRUD] JavaScript BÁSICO
+
 const miniX = {
 
     usuarios: [
