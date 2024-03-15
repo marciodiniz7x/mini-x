@@ -25,13 +25,17 @@
                 content: 'Meu primeiro post'
             }
         ],
-        criaPost(dados) {
-            // Cria posts na Memória (Array/Objeto)
-            miniRedeSocial.posts.push({
-                id: miniRedeSocial.posts.length + 1,
-                owner: dados.owner,
-                content: dados.content
-            });
+        criaPost(dados, htmlOnly = false) {
+
+            if (!htmlOnly) {
+                // Cria posts na Memória (Array/Objeto)
+                miniRedeSocial.posts.push({
+                    id: miniRedeSocial.posts.length + 1,
+                    owner: dados.owner,
+                    content: dados.content
+                });
+            }
+
             //Cria post no HTML
             const $listaDePosts = document.querySelector('.ListaDePosts');
             $listaDePosts.insertAdjacentHTML('afterbegin', `<li>${dados.content}</li>`);
@@ -45,8 +49,8 @@
     console.log($meuForm);
 
     // CRUD: [READ]
-    miniRedeSocial.posts.forEach(({owner, content}) => {
-        miniRedeSocial.criaPost({ owner: owner, content: content});
+    miniRedeSocial.posts.forEach(({ owner, content }) => {
+        miniRedeSocial.criaPost({ owner: owner, content: content }, true);
     });
 
     // CRUD: [CREATE]
@@ -54,7 +58,7 @@
         infosDoEvento.preventDefault();
         console.log('Estamos criando um posto novo');
         const $campoCriaPost = document.querySelector('input[name="campoCriaPost"]');
-        miniRedeSocial.criaPost({ owner: 'marciodiniz7x', content: $campoCriaPost.value});
+        miniRedeSocial.criaPost({ owner: 'marciodiniz7x', content: $campoCriaPost.value });
 
 
         $campoCriaPost.value = '';
