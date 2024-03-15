@@ -2,7 +2,9 @@
     <input name="campoCriaPost" placeholder="Digite o seu post">
     <button type="submit">Postar</button>
 </form>
+<ul class="ListaDePosts">
 
+</ul>
 
 
 <script>
@@ -14,6 +16,9 @@
     $meuForm.addEventListener('submit', function criaPostController(infosDoEvento) {
         infosDoEvento.preventDefault();
         console.log('Estamos criando um posto novo');
+        const $campoCriaPost = document.querySelector('input[name="campoCriaPost"]');
+
+        alert($campoCriaPost.value);
     })
 
     // Linguagem pura
