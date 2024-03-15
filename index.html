@@ -25,6 +25,17 @@
                 content: 'Meu primeiro post'
             }
         ],
+        criaPost(dados) {
+            // Cria posts na Memória (Array/Objeto)
+            miniRedeSocial.posts.push({
+                id: miniRedeSocial.posts.length + 1,
+                owner: dados.owner,
+                content: dados.content
+            });
+            //Cria post no HTML
+            const $listaDePosts = document.querySelector('.ListaDePosts');
+            $listaDePosts.insertAdjacentHTML('afterbegin', `<li>${dados.content}</li>`);
+        }
     };
 
 
@@ -32,15 +43,20 @@
     const $meuForm = document.querySelector('form');
 
     console.log($meuForm);
+
+    // CRUD: [READ]
+    miniRedeSocial.posts.forEach(({owner, content}) => {
+        miniRedeSocial.criaPost({ owner: owner, content: content});
+    });
+
+    // CRUD: [CREATE]
     $meuForm.addEventListener('submit', function criaPostController(infosDoEvento) {
         infosDoEvento.preventDefault();
         console.log('Estamos criando um posto novo');
         const $campoCriaPost = document.querySelector('input[name="campoCriaPost"]');
-        const $listaDePosts = document.querySelector('.ListaDePosts');
+        miniRedeSocial.criaPost({ owner: 'marciodiniz7x', content: $campoCriaPost.value});
 
-        // alert($campoCriaPost.value);
-        console.log($listaDePosts);
-        $listaDePosts.insertAdjacentHTML('afterbegin', `<li>${$campoCriaPost.value}</li>`);
+
         $campoCriaPost.value = '';
 
     })
