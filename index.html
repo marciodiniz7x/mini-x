@@ -17,8 +17,12 @@
         infosDoEvento.preventDefault();
         console.log('Estamos criando um posto novo');
         const $campoCriaPost = document.querySelector('input[name="campoCriaPost"]');
+        const $listaDePosts = document.querySelector('.ListaDePosts');
 
-        alert($campoCriaPost.value);
+        // alert($campoCriaPost.value);
+        console.log($listaDePosts);
+        $listaDePosts.insertAdjacentHTML('afterbegin', `<li>${$campoCriaPost.value}</li>`)
+
     })
 
     // Linguagem pura
