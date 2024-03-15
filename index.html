@@ -8,8 +8,27 @@
 
 
 <script>
-
     console.log('Olá pessoas!');
+
+    // Base de Dados
+    const miniRedeSocial = {
+
+        usuarios: [
+            {
+                username: 'marciodiniz7x',
+            }
+        ],
+        posts: [
+            {
+                id: 1,
+                owner: 'marciodiniz7x',
+                content: 'Meu primeiro post'
+            }
+        ],
+    };
+
+
+    // Front End
     const $meuForm = document.querySelector('form');
 
     console.log($meuForm);
@@ -21,7 +40,8 @@
 
         // alert($campoCriaPost.value);
         console.log($listaDePosts);
-        $listaDePosts.insertAdjacentHTML('afterbegin', `<li>${$campoCriaPost.value}</li>`)
+        $listaDePosts.insertAdjacentHTML('afterbegin', `<li>${$campoCriaPost.value}</li>`);
+        $campoCriaPost.value = '';
 
     })
 
