@@ -1,0 +1,25 @@
+<form>
+    <input name="campoCriaPost" placeholder="Digite o seu post">
+    <button type="submit">Postar</button>
+</form>
+
+
+
+<script>
+
+    console.log('Olá pessoas!');
+    const $meuForm = document.querySelector('form');
+
+    console.log($meuForm);
+    $meuForm.addEventListener('submit', function criaPostController(infosDoEvento) {
+        infosDoEvento.preventDefault();
+        console.log('Estamos criando um posto novo');
+    })
+
+    // Linguagem pura
+    // Cria variáveis
+    //  > Sincronizar o conteúdo das variáveis com HTML
+    // Atualiza variáveis
+
+
+</script>
